@@ -40,22 +40,26 @@ class MainActivity : AppCompatActivity() {
             //Let's check if the user's age is over 18
             if(age >= 18)
             {
+                //User is over 18
                 isOver18 = true
             }
             else
             {
+                //User is not over 18
                 isOver18 = false
             }
             //Now we determine the output based on the user's age
             if(isOver18)
             {
+                //isOver18 is true
                 tvMainOutput.text = "Hello $name, you are 18 or more years old!"
             }
             else
             {
+                //isOver18 is false
                 tvMainOutput.text = "Hello $name, you are not over 18 years old!"
             }
-        }
+        }//btnMainConfirm.setOnClickListener
         //Button click
         //Code goes above here
     }//override fun onCreate
