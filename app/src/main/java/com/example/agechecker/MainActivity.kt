@@ -31,6 +31,7 @@ class MainActivity : AppCompatActivity() {
         var name = ""
         var age = 0
         var isOver18 = false
+        var is18 = false
         //Logic
         btnMainConfirm.setOnClickListener()
         {
@@ -38,25 +39,38 @@ class MainActivity : AppCompatActivity() {
             name = edtTextMainName.text.toString()
             age = edtNumMainAge.text.toString().toInt()
             //Let's check if the user's age is over 18
-            if(age >= 18)
+            if(age > 18)
             {
                 //User is over 18
                 isOver18 = true
+                is18 = false
+            }
+            else if(age == 18)
+            {
+                //User is exactly 18
+                isOver18 = false
+                is18 = true
             }
             else
             {
                 //User is not over 18
                 isOver18 = false
+                is18 = false
             }
             //Now we determine the output based on the user's age
             if(isOver18)
             {
                 //isOver18 is true
-                tvMainOutput.text = "Hello $name, you are 18 or more years old!"
+                tvMainOutput.text = "Hello $name, you are over 18 years old!"
+            }
+            else if(is18)
+            {
+                //is18 is true and isOVer18 is false
+                tvMainOutput.text = "Hello $name, you are exactly 18 years old!"
             }
             else
             {
-                //isOver18 is false
+                //isOver18 is false and is18 is false
                 tvMainOutput.text = "Hello $name, you are not over 18 years old!"
             }
         }//btnMainConfirm.setOnClickListener
